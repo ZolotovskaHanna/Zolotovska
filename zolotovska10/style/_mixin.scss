@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700;800&display=swap');
+
+@mixin RobotoFlex($fs, $fw, $lh) {
+   font-family: 'Roboto Flex', sans-serif;
+   font-size: $fs;
+   font-weight: $fw;
+   line-height: $lh;
+}
+
+@mixin flex ($jc, $ai, $gp) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gp;
+}
+
+@mixin grid ($jc, $ai, $ji, $gg) {
+    display: grid;
+    justify-content: $jc;
+    align-items: $ai;
+    justify-items: $ji;
+    grid-gap: $gg;
+}
+
+
+

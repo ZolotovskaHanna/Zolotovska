@@ -1,0 +1,395 @@
+
+@use 'color';
+@use 'mixin';
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.header{
+    @include mixin.flex(space-around, center, 0);
+    padding: 25px 0;
+    border-bottom: 1px solid color.$primary-color8;
+    &__line{
+        @include mixin.flex(center, center, 50px);
+    }
+}
+
+.nav {
+    @include mixin.flex(center, center, 40px);
+    &__item-link{
+        @include mixin.RobotoFlex(15px, 400, 20px);
+        color: color.$primary-color1;
+    }
+}
+
+  .btn {
+      &__login{
+        @include mixin.RobotoFlex(16px, 600, 45px);
+        text-align: center;
+        color: color.$primary-color1;
+        background-color: color.$primary-color;
+        border: 1px solid color.$primary-color12;
+        padding: 5px 40px;
+      }
+      &__free {
+        @include mixin.RobotoFlex(16px, 600, 45px);
+        text-align: center;
+        color: color.$primary-color;
+        background-color: color.$primary-color5;
+        border: 1px solid color.$primary-color5;
+        padding: 5px 35px;
+    }
+  }
+
+.container1{
+@include mixin.flex(none, center, 40px);
+padding: 100px 0 150px 0;
+margin: 0 75px 0 75px;
+    &__code{
+    color: color.$primary-color1;
+}
+        .code-titel {
+            @include mixin.RobotoFlex(65px, 600, 70px);
+            margin-bottom: 50px;
+        }
+
+        .code-text {
+            @include mixin.RobotoFlex(25px, 400, 35px);
+            margin-bottom: 50px;
+        }
+
+        .code-text2 {
+            @include mixin.RobotoFlex(15px, 400, 25px);
+            padding-top: 25px;
+        }
+}
+
+.btn {
+    &__demo {
+        @include mixin.RobotoFlex(16px, 600, 60px);
+        text-align: center;
+        color: color.$primary-color1;
+        background-color: color.$primary-color;
+        border: 1px solid color.$primary-color12;
+        padding: 5px 30px;
+    }
+
+    &__free1 {
+        @include mixin.RobotoFlex(16px, 600, 60px);
+        text-align: center;
+        color: color.$primary-color;
+        background-color: color.$primary-color5;
+        border: 1px solid color.$primary-color5;
+        padding: 5px 40px;
+    }
+}
+
+    .container2 {
+        padding: 100px 0;
+        background: color.$primary-color6;
+
+        .comp-subject {
+            @include mixin.RobotoFlex(50px, 600, 60px);
+            text-align: center;
+            color: color.$primary-color1;
+            margin-bottom: 80px;
+        }
+
+        .comp-grid {
+            @include mixin.grid(space-around, center, center, 0);
+            grid-template-columns: repeat(6, 150px);
+        }
+    }
+
+.container3{
+    padding: 100px 0 150px 0;
+    margin: 0 75px 0 75px;
+    .card-gif{
+        @include mixin.grid(center, center, center, 0);
+        grid-template-columns: repeat(2, 550px);
+        grid-row-gap: 200px;
+        grid-template-areas:
+                ". a"
+                "b ."
+                ". c"
+                "d .";
+    }
+        .gif1 {
+            grid-area: a;
+        }
+    
+        .gif2 {
+            grid-area: b;
+        }
+    
+        .gif3 {
+            grid-area: c;
+        }
+    
+        .gif4 {
+            grid-area: d;
+        }
+
+        .card-process1,
+        .card-process3 {
+            @include mixin.grid(none, none, none, 30px);
+            padding: 5px 160px 5px 0px;
+        }
+
+        .card-process2,
+        .card-process4 {
+            @include mixin.grid(none, none, none, 30px);
+            padding: 5px 0px 0px 140px;
+        }
+
+        .titel-process {
+            @include mixin.RobotoFlex(50px, 600, 60px);
+            color: color.$primary-color1;
+        }
+
+        .text-process {
+            @include mixin.RobotoFlex(20px, none, 30px);
+            color: color.$primary-color1;
+        }
+
+        .btn-card {
+            @include mixin.RobotoFlex(20px, 600, 30px);
+            color: color.$primary-color1;
+        }
+}
+.container4{
+    background: color.$primary-color4;
+    padding: 120px 0 90px 0;
+    .card-title2{
+        @include mixin.RobotoFlex(50px, 600, 60px);
+        color: color.$primary-color1;
+        text-align: center;
+        margin-bottom: 80px;
+        }
+    .card-info{
+        @include mixin.grid(none, none, none, 75px 120px);
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card{
+        @include mixin.grid(none, none, center, 20px);
+        padding: 20px 10px 0px 10px;
+    }
+    .card-details{
+        @include mixin.grid(none, none, none, 20px);
+    }
+    .card-items {
+        @include mixin.RobotoFlex(25px, 600, 35px);
+        color: color.$primary-color1;
+        text-align: center;
+    }
+
+    .card-item {
+        @include mixin.RobotoFlex(18px, 400, 25px);
+        color: color.$primary-color1;
+        text-align: center;
+    }
+}
+
+.container5{
+    padding: 150px 0 150px 0;
+    margin: 0 75px 0 75px;
+    .card-title2 {
+        @include mixin.RobotoFlex(50px, 600, 60px);
+        color: color.$primary-color1;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    .card2-job{
+        @include mixin.grid(none, none, none, 30px);
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card2{
+        @include mixin.grid(none, none, none, 50px);
+    }
+    .card-titel-cont{
+        @include mixin.grid(none, none, none, 30px);
+    }
+    .card-titel{
+        @include mixin.RobotoFlex(30px, 600, 40px);
+        color: color.$primary-color1;
+    }
+    .card-text{
+        @include mixin.RobotoFlex(20px, 400, 30px);
+        color: color.$primary-color1;
+    }
+    .card-link{
+        @include mixin.RobotoFlex(20px, 400, 30px);
+        color: color.$primary-color1;
+        text-decoration-line: underline;
+    }
+}
+
+.container6 {
+        @include mixin.flex(none, none, 60px);
+        padding: 60px 75px 100px;
+        background: color.$primary-color7;
+
+        .Revolut-sub {
+            @include mixin.RobotoFlex(30px, 400, 40px);
+            color: color.$primary-color1;
+            padding-bottom: 25px;
+        }
+
+        .Revolut-user {
+            @include mixin.RobotoFlex(15px, 400, 25px);
+            color: color.$primary-color1;
+            padding-bottom: 10px;     
+    }
+}
+
+   .container7 {
+       @include mixin.flex(center, none, 0);
+       padding: 75px;
+       background: color.$primary-color9;
+
+       &__cake{
+        @include mixin.flex(none, center, 60px);
+       }
+
+       .cake-titel {
+           @include mixin.RobotoFlex(35px, 600, 50px);
+            color: color.$primary-color1;
+            border-right: 1px solid black;
+            padding-right: 125px;
+       }
+
+       .cake-icon {
+        @include mixin.flex(center, none, 20px);
+        flex-direction: column;
+        padding: 0 0 0 70px;
+       }
+   }
+
+    .container8 {
+        @include mixin.flex(none, center, 0);
+        padding: 150px 0;
+        flex-direction: column;
+
+        .bird-titel {
+            @include mixin.RobotoFlex(65px, 600, 75px);
+            color: color.$primary-color1;
+        }
+
+        .bird-text {
+            @include mixin.RobotoFlex(25px, none, 30px);
+            color: color.$primary-color1;
+            margin-bottom: 25px;
+        }
+
+        .bird-see {
+            @include mixin.RobotoFlex(16px, 600, 60px);
+            color: color.$primary-color;
+            background: color.$primary-color5;
+            border-color: color.$primary-color5;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+    }
+
+    .container9 {
+        @include mixin.flex(none, center, 0);
+        padding: 119px 0 160px 0;
+        background: color.$primary-color6;
+        flex-direction: column;
+
+        .local-titel {
+            @include mixin.RobotoFlex(65px, 600, 75px);
+            color: color.$primary-color1;
+            margin-bottom: 30px;
+        }
+
+        .local-text {
+            @include mixin.RobotoFlex(20px, none, 30px);
+            color: color.$primary-color1;
+            margin-bottom: 50px;
+        }
+
+        .btn-local {
+            @include mixin.RobotoFlex(17px, 600, 60px);
+            color: color.$primary-color;
+            background: color.$primary-color1;
+            border-color: color.$primary-color5;
+            padding: 10px 40px;
+        }
+    }
+
+        .container10 {
+            padding: 100px 75px 0px 75px;
+            background: color.$primary-color10;
+            &__case{
+                @include mixin.flex(center, flex-start, 0);
+            }
+            .case{
+                border-bottom: 1px solid color.$primary-color1;
+                padding: 0 0 90px 0;
+            }
+            .case-studies {
+                @include mixin.flex(space-between, flex-start, 0);
+                color: color.$primary-color1;
+                flex-direction: column;
+                padding-right: 70px;
+            }
+            .case-img{
+                padding-top: 30px;
+            }
+            .case-titel{
+                @include mixin.RobotoFlex(40px, 600, 50px);
+            }
+            .case-text{
+                @include mixin.RobotoFlex(20px, none, 30px);
+                padding: 10px 0 15px 0;
+                width: 50%;
+            }
+            .case-span{
+                @include mixin.RobotoFlex(20px, 600, 30px);
+            }
+        }
+        .case-list {
+            @include mixin.flex(none, none, 0);
+            flex-direction: column;
+            min-width: 225px;
+            .list-titel{
+                @include mixin.RobotoFlex(20px, 600, 25px);
+                color: color.$primary-color1;
+            }
+            .list-li {
+                @include mixin.RobotoFlex(15px, none, 15px);
+                padding: 20px 20px 0 0;
+            }
+        }
+
+  .footer {
+      @include mixin.flex(space-between, center, 0);
+      background: color.$primary-color10;
+      @include mixin.RobotoFlex(12px, none, 15px);
+      padding: 50px 75px 50px 75px;
+      &__logo {
+        @include mixin.flex(none, none, 15px);
+      }
+      &__text{
+        width: 50%;
+        color: color.$primary-color1;
+      }
+      &__logo-span{
+        @include mixin.flex(none, none, 0);
+        flex-direction: column;
+        color: color.$primary-color1;
+      }
+  }
+
+  .span {
+      text-decoration: underline;
+  }
+
+
+
+
