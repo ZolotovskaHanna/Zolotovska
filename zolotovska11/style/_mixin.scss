@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Lora:wght@700&family=Quicksand:wght@400;500;700&family=Roboto+Slab:wght@700&display=swap");
+
+@mixin Roboto($fs, $fw, $lh) {
+    font-family: 'Roboto Slab', serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin Lora($fs, $fw, $lh) {
+    font-family: 'Lora', serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin Lato($fs, $fw, $lh) {
+    font-family: 'Lato', serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin Quicksand($fs, $fw, $lh) {
+    font-family: 'Quicksand', sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin flex($jc, $ai, $gp) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gp;
+}
+
+@mixin grid($jc, $ai, $ji, $gg) {
+    display: grid;
+    justify-content: $jc;
+    align-items: $ai;
+    justify-items: $ji;
+    grid-gap: $gg;
+}
