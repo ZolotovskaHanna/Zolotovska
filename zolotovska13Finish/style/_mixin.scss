@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+@mixin Montserrat($fs, $lh, $fw) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin flex($jc, $ai, $gp, $fd) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gp;
+    flex-direction: $fd;
+}
+
+@mixin grid($jc, $ai, $ji, $gg) {
+    display: grid;
+    justify-content: $jc;
+    align-items: $ai;
+    justify-items: $ji;
+    grid-gap: $gg;
+}
+

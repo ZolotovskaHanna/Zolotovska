@@ -1,0 +1,3868 @@
+    @use 'color';
+    @use 'mixin';
+
+    * {
+    border: none;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    }
+
+    .bg {
+    background: color.$gradient-bg;
+
+    }
+
+    .open {
+    display: flex !important;
+    }
+
+    .header-home-symbol {
+    background-image: url(../img/Symbol.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    width: 100%;
+    }
+
+    .Consistent__item-span2:hover,
+    .Consistent__item-span3:hover,
+    .Consistent__item-span1:hover {
+    color: color.$Accent;
+    }
+
+
+
+    .headers-home {
+    @include mixin.flex(center, none, 0, column);
+
+    &__first {
+    @include mixin.flex(space-between, center, 0, none);
+    padding: 10px 15px;
+    background: color.$Comet;
+    }
+
+    &__callback {
+    @include mixin.Montserrat(16px, normal, 700);
+    }
+
+    .callback {
+    color: color.$white;
+    }
+
+    }
+
+    .headers {
+    @include mixin.flex(center, none, 0, column);
+
+    &__first {
+    @include mixin.flex(space-between, center, 0, none);
+    padding: 10px 15px;
+    background: color.$Grey-Bg;
+    }
+    &__callback {
+    @include mixin.Montserrat(16px, normal, 700);
+    }
+
+    .callback {
+    color: color.$Grey-Text;
+    }
+
+    }
+
+    .lang-home {
+    @include mixin.flex(flex-start, center, 6px, none);
+    @include mixin.Montserrat(12px, normal, 700);
+
+    &__lang-home {
+    padding: 5px 7px;
+    border-radius: 8px;
+    color: color.$white;
+    }
+
+    &__lang-home:hover {
+    background: color.$Grey-Bg;
+    }
+
+    &__lang-home:active {
+    background: color.$Accent;
+    color: color.$white;
+    }
+    }
+
+    .lang {
+    @include mixin.flex(flex-start, center, 6px, none);
+    @include mixin.Montserrat(12px, normal, 700);
+
+    &__lang{
+    padding: 5px 7px;
+    border-radius: 8px;
+    color: color.$Grey-Text;
+    }
+    &__lang:hover{
+    background: color.$Grey-Bg;
+    }
+    &__lang:active {
+    background: color.$Accent;
+    color: color.$white;
+    }
+    }
+
+    .header-home {
+    @include mixin.flex(space-between, center, 0, none);
+
+    padding: 15px 15px 10px 15px;
+
+    &__first {
+    padding: 10px 15px;
+    }
+
+    &__logo {
+    @include mixin.flex(center, center, 4px, none);
+    }
+
+    &__logo-txt {
+    @include mixin.Montserrat(20px, normal, 400);
+    color: color.$white;
+    }
+    &__txt {
+    padding: 0 0 30px 0;
+    text-align: center;
+    }
+    }
+    .svg-btn:hover * {
+    stroke: color.$Accent;
+    }
+    .txt-home {
+    @include mixin.Montserrat(38px, normal, 700);
+    margin-top: 129px;
+    text-align: center;
+    color: color.$white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 159px;
+    }
+    .header {
+    @include mixin.flex(space-between, center, 0, none);
+    padding: 15px 15px 10px 15px;
+    &__first{
+    padding: 10px 15px;
+    }
+
+    &__logo {
+    @include mixin.flex(center, center, 4px, none);
+    }
+    &__logo-txt {
+    @include mixin.Montserrat(20px, normal, 400);
+    color: color.$Main-Regular;
+    }
+    }
+
+    .nav {
+    @include mixin.flex(none, none, 0, column);
+    border-radius: 12px 12px 0px 0px;
+    background: color.$white;
+    display: none;
+    position: fixed;
+    width: 89%;
+    top: 50px;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    z-index: 50;
+    overflow-y: auto;
+    padding: 12px;
+    animation: burgerAnimation 0.4s;
+    }
+
+    .nav-menu {
+    @include mixin.flex(space-between, center, 15px, column);
+    border-radius: 12px 12px 0px 0px;
+    }
+
+    .act {
+    margin-bottom: 20px;
+    }
+
+    .actives {
+    text-align: center;
+    border-radius: 12px;
+    background: color.$Grey-Bg;
+    padding: 7px 0;
+    width: 100%;
+    }
+
+    .nav-actives {
+    @include mixin.Montserrat(24px, normal, 700);
+    color: color.$Active;
+    @include mixin.flex(center, flex-start, 10px, none);
+    background: color.$Grey-Bg;
+    align-self: stretch;
+    text-align: center;
+    }
+
+
+    .nav-actives:hover {
+    background-color: color.$Grey-Separator;
+    }
+    .actives:hover {
+    background-color: color.$Grey-Separator;
+    }
+
+    .svg-play:hover {
+    background-color: color.$Grey-Separator;
+    }
+
+    .nav-actives:active {
+    color: color.$Accent;
+    }
+
+    .burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: none;
+    }
+
+    .burger .svg-play {
+    display: block;
+    }
+
+    .burger .svg-pause {
+    display: none;
+    }
+
+    .burger.burger--toggle .svg-play {
+    display: none;
+    }
+
+    .burger.burger--toggle .svg-pause {
+    display: block;
+    }
+    .burger {
+    @include mixin.flex(none, none, 0, none);
+    }
+
+    .contackt {
+    @include mixin.flex(center, center, 0, column);
+    padding: 30px;
+    background-color: color.$Grey-Bg;
+
+    .contackt-first {
+    @include mixin.flex(center, center, 0, column);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 10px;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    margin-bottom: 21px;
+    }
+    }
+
+    .contackt-second {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+
+    @include mixin.flex(center, center, 0, column);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+    margin: 10px 0;
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    margin-bottom: 30px;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    #hover:hover {
+    color: color.$Accent;
+    }
+
+    .legal {
+    @include mixin.flex(none, flex-start, 30px, column);
+    margin-top: 30px;
+    padding: 0px 30px;
+    margin-bottom: 30px;
+
+    &__time {
+    padding-left: 30px;
+    border-left: 4px solid color.$Grey-Separator;
+    @include mixin.flex(none, flex-start, 40px, column);
+    }
+    }
+
+    .svg {
+    &__span {
+    @include mixin.Montserrat(36px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    &__txt {
+    margin-top: 10px;
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    }
+    }
+
+    .services {
+    @include mixin.flex(none, flex-start, 30px, column);
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    &__txt,
+    &__txt1 {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$Black;
+    }
+    }
+
+    .team {
+    background-image: url(../img/Team.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 100%;
+    width: 100%;
+
+    &__titel {
+    @include mixin.Montserrat(36px, normal, 700);
+    padding: 35px 0;
+    color: color.$white;
+    text-align: center;
+    text-shadow: 0px 15px 30px 0px rgba(40, 40, 86, 0.80);
+    letter-spacing: 13px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    }
+    }
+
+    .team-text {
+    padding: 0 30px;
+
+    &__txt1 {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$Black;
+    }
+
+    &__txt2 {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$Black;
+    margin: 15px 0;
+    }
+
+    &__txt3 {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$Black;
+    margin-bottom: 30px;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 60px;
+    }
+    }
+
+    .achievements {
+    @include mixin.flex(center, center, 0, column);
+    padding: 30px 60px 0 60px;
+    background-color: color.$Grey-Bg;
+
+    &__txt {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Main-Regular;
+    margin-bottom: 30px;
+    }
+
+    &__img {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 90px;
+    }
+
+    &__svg {
+    @include mixin.flex(center, center, 14px, row);
+    }
+    }
+
+    .team-page {
+    padding: 30px;
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    &__card {
+    @include mixin.flex(center, center, 15px, column);
+
+    &-img {
+    border-radius: 12px;
+    max-width: 315px;
+    }
+    }
+
+    &__about {
+    @include mixin.flex(space-between, none, 15px, row);
+
+    svg:hover * {
+    stroke: color.$Accent;
+    background: color.$Lavender1;
+    }
+    }
+
+    &__cards {
+    padding: 0 0 30px 0;
+    }
+    }
+
+    .about {
+    width: 100%;
+    max-width: 315px;
+
+    &-name {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Regular;
+    margin-bottom: 5px;
+    }
+
+    &-prof {
+    @include mixin.Montserrat(14px, normal, 400);
+    color: color.$Grey-Text;
+    margin-bottom: 30px;
+    }
+
+    }
+
+    .teamentry {
+
+    padding: 30px;
+
+    &__card-img {
+    max-width: 315px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    }
+
+    &-card {
+    &__name {
+    @include mixin.Montserrat(38px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    }
+
+    &__prof {
+    @include mixin.Montserrat(14px, normal, 400);
+    color: color.$Grey-Text;
+    margin-bottom: 10px;
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Active;
+
+    }
+
+    &__txt {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Active;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    }
+    }
+
+    &-text {
+    &__text1 {
+    padding-top: 30px;
+    border-top: 4px solid color.$Grey-Separator;
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    margin-bottom: 15px;
+    }
+
+    &__text2 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    margin-bottom: 30px;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Regular;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    }
+
+    &__text3 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    margin-bottom: 30px;
+    }
+
+    &__text4 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    }
+    }
+
+
+    }
+
+    .contact {
+    padding: 30px;
+
+
+    .contact-adress {
+    @include mixin.flex(none, none, 0, column);
+
+    &__adress {
+    padding: 0 0 30px 0;
+    @include mixin.Montserrat(21px, normal, 400);
+    color: color.$Main-Regular;
+    border-bottom: 4px solid color.$Grey-Separator;
+    }
+
+    &__tel {
+    padding: 30px 0 15px 0;
+    @include mixin.Montserrat(21px, normal, 400);
+    color: color.$Main-Alt;
+    }
+
+    &__email {
+    border-bottom: 4px solid color.$Grey-Separator;
+    padding: 0 0 30px 0;
+    @include mixin.Montserrat(21px, normal, 400);
+    color: color.$Active;
+    }
+
+    &__fb {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+
+    @include mixin.flex(none, center, 5px, row);
+    padding: 30px 0 30px 0;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    }
+
+    &__span:hover {
+    color: color.$Accent;
+    }
+
+    }
+
+    .contact-form {
+    @include mixin.flex(space-between, center, 0, column);
+
+    padding: 30px;
+    border-radius: 12px;
+    background-color: color.$Grey-Bg;
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    }
+
+    &__name {
+    @include mixin.Montserrat(16px, normal, 400);
+    background: color.$Grey-Text;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid color.$white;
+    background: color.$white;
+    width: 100%;
+    height: auto 56px;
+    margin-bottom: 15px;
+    }
+    &__name:focus{
+    outline: 1px solid color.$Active;
+    }
+    &__name:Invalid {
+        outline: 1px solid color.$Accent;
+        color: color.$Accent;
+    }
+
+    &__Message {
+    @include mixin.Montserrat(16px, normal, 400);
+    background: color.$Grey-Text;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid color.$white;
+    background: color.$white;
+    width: 100%;
+    height: 130px;
+    margin-bottom: 30px;
+    text-align: justify;
+    }
+    &__Message:focus {
+        outline: 1px solid color.$Active;
+    }
+    &__Message:invalid {
+        outline: 1px solid color.$Accent;
+        color: color.$Accent;
+    }
+
+    &__txt {
+    @include mixin.Montserrat(14px, normal, 700);
+    color: color.$Grey-Text;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+    }
+
+    &__Phone {
+    @include mixin.Montserrat(16px, normal, 400);
+    background: color.$Grey-Text;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid color.$white;
+    background: color.$white;
+    width: 100%;
+    height: auto 56px;
+    margin-bottom: 15px;
+    }
+    &__Phone:focus {
+    outline: 1px solid color.$Active;
+    }
+    &__Phone:invalid {
+        outline: 1px solid color.$Accent;
+        color: color.$Accent;
+    }
+
+    &__Email {
+    @include mixin.Montserrat(16px, normal, 400);
+    background: color.$Grey-Text;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid color.$white;
+    background: color.$white;
+    width: 100%;
+    height: auto 56px;
+    margin-bottom: 30px;
+    }
+    &__Email:focus {
+        outline: 1px solid color.$Active;
+    }
+    &__Email:invalid {
+        outline: 1px solid color.$Accent;
+        color: color.$Accent;
+    }
+
+    &__button {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$white;
+    padding: 18px 30px;
+    border-radius: 12px;
+    border: 1px solid color.$white;
+    background: color.$Active;
+    }
+    &__button:hover{
+    background: #0085FF;
+    }
+    &__button:active{
+    background: #006CCF;
+    }
+        
+    }
+    }
+
+    .gdpr {
+    padding: 30px 30px 60px 30px;
+
+    &-img {
+    width: 100%;
+    }
+
+    .card-text {
+    margin-top: 30px;
+
+    .text {
+    &-link {
+    @include mixin.Montserrat(20px, normal, 700);
+    color: color.$Main-Regular;
+    }
+
+    &-data {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Grey-Text;
+    text-transform: uppercase;
+    margin: 15px 0 30px 0;
+    ;
+    }
+
+    &-txt {
+    @include mixin.Montserrat(16px, 26px, 400);
+    color: color.$Black;
+    padding: 30px 0;
+    border-top: 4px solid color.$Lavender;
+    }
+
+    &-txt2 {
+    @include mixin.Montserrat(16px, 26px, 400);
+    color: color.$Black;
+    margin-bottom: 30px;
+    }
+    }
+    }
+
+    &-public {
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    }
+
+    &__titel2 {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+    margin-bottom: 15px;
+    }
+
+    &__link1 {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    }
+
+    &__txt2 {
+    @include mixin.Montserrat(16px, 26px, 400);
+    color: color.$Black;
+    margin-bottom: 30px;
+    }
+
+    &__txt3 {
+    @include mixin.Montserrat(14px, normal, 400);
+    color: color.$Grey-Text;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    }
+
+    &__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    }
+
+    ol {
+    padding: 0 0 0 15px;
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    }
+
+    ol li {
+    @include mixin.Montserrat(18px, normal, 400);
+    counter-increment: my-awesome-counter;
+    }
+
+    ol li::before {
+    content: counter(my-awesome-counter) ". ";
+    color: color.$Accent;
+    font-weight: bold;
+    }
+
+    &-social {
+    @include mixin.flex(flex-start, center, 10px, row);
+    padding: 30px 0 0 0;
+    border-top: 4px solid color.$Lavender;
+
+    &__svg {
+    padding: 9px;
+    background: color.$Grey-Bg;
+    border-radius: 12px;
+    }
+
+    &__svg:hover {
+    background: color.$Lavender1;
+    }
+    }
+
+    #social:hover {
+    color: color.$Lavender1;
+
+    }
+
+    }
+
+    .Publications {
+    padding: 30px 30px 0 30px;
+    background-color: color.$Grey-Bg;
+
+    &__button {
+    @include mixin.flex(flex-start, center, 0, row);
+
+    }
+
+    &__button:hover * {
+    stroke: color.$Accent;
+    }
+
+    &__btn {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Active;
+    }
+
+    &__btn:hover {
+    color: color.$Accent;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    }
+
+    .item {
+    @include mixin.flex(none, none, 30px, column);
+
+    &__card {
+    @include mixin.flex(center, center, 0, column);
+    background-color: color.$white;
+    border-radius: 8px;
+    }
+
+    .card-text {
+    padding: 30px;
+
+    .text {
+    &-link {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+
+    &-link:hover {
+    color: color.$Accent;
+    }
+
+    &-data {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Grey-Text;
+    text-transform: uppercase;
+    margin: 15px 0;
+    }
+
+    &-txt {
+    @include mixin.Montserrat(14px, 22px, 400);
+    color: color.$Black;
+    padding-top: 15px;
+    border-top: 4px solid color.$Lavender;
+    }
+    }
+    }
+    }
+
+    #imgages {
+    width: 100%;
+    }
+    }
+
+    .Publications-entry {
+    padding: 30px 30px 0 30px;
+    background-color: color.$Grey-Bg;
+
+    &__button1 {
+    display: inline-flex;
+    @include mixin.flex(center, center, 2px, row);
+    border-radius: 12px;
+    background: color.$Grey-Separator;
+    padding: 2px;
+    margin-bottom: 30px;
+    max-width: 233px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &-btn1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Regular;
+    padding: 8px 30px 10px 30px;
+    border-radius: 10px;
+    background: color.$white;
+    }
+
+    &-btn1:hover {
+    background: color.$Grey-Bg;
+    }
+
+    &-btn2 {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Regular;
+    padding: 8px 30px 10px 30px;
+    border-radius: 10px;
+    background: color.$Grey-Separator;
+    }
+
+    &-btn2:hover {
+    background: color.$Grey-Bg;
+    }
+    }
+
+
+    .item-entry {
+
+    &__card-entry {
+    @include mixin.flex(flex-start, center, 0, column);
+    background-color: color.$white;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    }
+
+    .card-text1 {
+    padding: 30px;
+
+    .text1 {
+    &-link1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+
+    &-link1:hover {
+    color: color.$Accent;
+    }
+
+    &-data1 {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Grey-Text;
+    text-transform: uppercase;
+    margin: 15px 0;
+    }
+
+    &-txt1 {
+    @include mixin.Montserrat(14px, 22px, 400);
+    color: color.$Black;
+    padding-top: 15px;
+    border-top: 4px solid color.$Lavender;
+    }
+    }
+    }
+    }
+
+    #imgages {
+    width: 100%;
+    }
+
+    &__button {
+    @include mixin.flex(center, center, 0, column);
+
+    &-btn {
+
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$white;
+    text-align: center;
+    border-radius: 12px;
+    background: color.$Active;
+    box-shadow: color.$box-shadow;
+    padding: 18px 30px;
+    }
+    }
+    }
+
+    .Consistent {
+    padding: 30px;
+
+    &__item {
+    @include mixin.flex(flex-start, center, 30px, row);
+    margin-bottom: 30px;
+
+    &-span1 {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    &-span2,
+    &-span3 {
+    @include mixin.flex(none, none, 0, row);
+    @include mixin.Montserrat(30px, normal, 700);
+    color: color.$Grey-Text;
+    flex-wrap: nowrap;
+    }
+    }
+
+    &__titel {
+    border-top: 4px solid color.$white30;
+
+    &-txt {
+    @include mixin.Montserrat(20px, normal, 700);
+    color: color.$white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    }
+
+    &-sub {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$white;
+    }
+    }
+    }
+
+    .Services {
+    padding: 0 30px 30px 30px;
+
+    &__button {
+    @include mixin.flex(flex-start, center, 0, row);
+    }
+
+    &__button:hover * {
+    stroke: color.$Accent;
+    }
+
+    &__btn {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Active;
+    }
+
+    &__btn:hover {
+    color: color.$Accent;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    }
+
+    .item {
+    @include mixin.flex(none, none, 0, column);
+
+    &-svg {
+    padding: 14px;
+    border-radius: 24px;
+    background: color.$white;
+    margin-bottom: 30px;
+    }
+
+    &-link {
+    @include mixin.Montserrat(22px, normal, 700);
+    color: color.$Active;
+    }
+
+    &-link:hover {
+    color: color.$Accent;
+    }
+
+    &-text {
+    @include mixin.Montserrat(16px, 26px, 400);
+    color: color.$white;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    }
+    }
+    }
+
+    .Services1 {
+    padding: 0 30px 30px 30px;
+
+    &__button {
+    @include mixin.flex(flex-start, center, 0, row);
+    }
+
+    &__btn {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Active;
+
+    }
+
+    &__titel1 {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    }
+
+    .item1 {
+    @include mixin.flex(none, none, 0, column);
+
+    &-svg {
+    padding: 14px;
+    border-radius: 24px;
+    background: color.$white;
+    margin-bottom: 30px;
+    }
+
+    &-link {
+    @include mixin.Montserrat(22px, normal, 700);
+    color: color.$Active;
+    }
+
+    &-link:hover {
+    color: color.$Accent;
+    }
+
+    &-text {
+    @include mixin.Montserrat(16px, 26px, 400);
+    color: color.$white;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    }
+    }
+    }
+
+    .border1 {
+    border-bottom: 10px solid color.$Lavender-Grey;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0 20px;
+    }
+
+    .border2 {
+    border-bottom: 10px solid color.$Lavender;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0 40px 30px 40px;
+    }
+
+    .teams {
+    padding: 0 30px;
+
+    &__img {
+    width: 100%;
+    border-radius: 12px 12px 0px 0px;
+    }
+
+    &__pages {
+    background-color: color.$Grey-Bg;
+    border-radius: 0px 0px 12px 12px;
+    padding: 30px;
+    }
+
+    &__page {
+    @include mixin.flex(flex-start, center, 0, row);
+
+    &-link {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Active;
+    margin-bottom: 5px;
+    }
+
+    &-link:hover {
+    color: color.$Accent;
+    }
+
+    &-titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    word-wrap: break-word;
+    margin-bottom: 30px;
+    }
+
+    &-txt {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Grey-Text;
+    margin-bottom: 6px;
+
+    }
+
+    &-span {
+    @include mixin.Montserrat(14px, 22px, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    &__svg {
+    @include mixin.flex(center, center, 15px, row);
+    margin-top: 30px;
+    margin-bottom: 60px;
+    }
+
+    &__svg:hover {
+    fill: color.$Accent;
+    }
+    }
+
+    .trust {
+    &__titel {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Main-Regular;
+    margin-bottom: 30px;
+    text-align: center;
+    }
+
+    &__images {
+    @include mixin.grid(center, center, none, 0);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+
+
+    }
+
+    .img-mob1 {
+    padding: 37px 19px 36px 20px;
+    background: color.$Dark-Cerulean;
+    }
+
+    .img-mob2 {
+    padding: 45px 28px;
+    background: color.$Blue-Whale;
+    }
+
+    .img-mob3 {
+    padding: 39px 38px 38px 39px;
+    background: color.$Sun;
+    }
+
+    .img-mob4 {
+    padding: 40px 38px;
+    background: color.$Deep-Lilac;
+    }
+
+    .img-mob5 {
+    padding: 39px 41px;
+    background: color.$Neon-Carrot;
+    }
+
+    .img-mob6 {
+    padding: 37px 61px;
+    background: color.$Quartz;
+    }
+
+    .img-mob7 {
+    padding: 30px 59px;
+    background: color.$Cnardial;
+    }
+
+    .img-mob8 {
+    padding: 22px 55px;
+    background: color.$Light-Cyan;
+    }
+
+    .img-mob9 {
+    padding: 30px 37px;
+    background: color.$Whisper;
+    }
+
+    .img-mob10 {
+    padding: 42px 37px;
+    background: color.$Tolopea;
+    }
+
+    .img-mob11 {
+    padding: 38px 33px;
+    background: color.$Regal-Blue;
+    }
+
+    .img-mob12 {
+    padding: 13px 52px;
+    background: color.$Black;
+    }
+    }
+    .Services-entry {
+    padding: 30px;
+
+    .item {
+    @include mixin.flex(center, center, 28px, column);
+
+    &-svg {
+    padding: 14px;
+    border-radius: 24px;
+    background: color.$white;
+    }
+
+    &-titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    &-text1 {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$white;
+    text-align: center;
+    }
+
+    &-text2 {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$white;
+    text-align: center;
+    }
+
+    &-btn {
+    @include mixin.Montserrat(16px, normal, 700);
+    padding: 18px 30px;
+    color: color.$white;
+    border-radius: 12px;
+    background: color.$Active;
+    box-shadow: 0px 0px 20px 0px rgba(36, 163, 255, 0.50);
+    margin-bottom: 30px;
+    }
+    }
+    }
+
+    .Services-txt {
+    border-top: 4px solid color.$white50;
+    @include mixin.flex(flex-start, none, 0, column);
+    padding: 30px 0;
+
+    &__text {
+    padding: 0 0 0 15px;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(22px, normal, 700);
+    color: color.$white;
+    margin-bottom: 30px;
+    }
+    }
+
+    .Services-txt {
+    &__list {
+    list-style: initial;
+    @include mixin.Montserrat(18px, 26px, 400);
+    color: color.$Accent;
+    margin-bottom: 15px;
+
+    span {
+    color: color.$white;
+    }
+    }
+    }
+
+    .border3 {
+    border-bottom: 10px solid color.$Lavender;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0 40px 60px 40px;
+    }
+
+    .Publications-servis {
+    border-radius: 12px 12px 0px 0px;
+    padding: 30px 30px 0 30px;
+    background-color: color.$Grey-Bg;
+
+    &__button-servis {
+    @include mixin.flex(flex-start, center, 0, row);
+    }
+
+    &__btn-servis {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Active;
+    }
+
+    &__titel-servis {
+    @include mixin.Montserrat(30px, normal, 700);
+    background: color.$gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    }
+
+    .item-servis {
+    @include mixin.flex(none, none, 30px, column);
+
+    &__card {
+    background-color: color.$white;
+    border-radius: 8px;
+    }
+
+    .card-text {
+    padding: 30px;
+
+    .text {
+    &-link {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+
+    &-data {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Grey-Text;
+    text-transform: uppercase;
+    margin: 15px 0;
+    }
+
+    &-txt {
+    @include mixin.Montserrat(14px, 22px, 400);
+    color: color.$Black;
+    padding-top: 15px;
+    border-top: 4px solid color.$Lavender;
+    }
+    }
+    }
+    }
+    }
+
+
+    @media screen and (max-width:  610px){
+    .headers-home{
+    &__adress{
+    display: none;
+    }
+    #two {
+    display: none;
+    }
+    .ellips-home {
+    display: none;
+    }
+    .nav1 {
+    display: none;
+    }
+    .txt-home {
+    width: 50%;
+    }
+    }
+    .img-mob7,
+    .img-mob8,
+    .img-mob9,
+    .img-mob10,
+    .img-mob11,
+    .img-mob12 {
+    display: none;
+    }
+    .Cover1 {
+    display: none;
+    }
+    .Consistent__item-span3 {
+    display: none;
+    }
+
+    .Consistent__item-span2 {
+    text-wrap: nowrap;
+    }
+    .headers{
+    &__adress {
+    display: none;
+    }
+    .ellips {
+    display: none;
+    }
+    .nav1{
+    display: none;
+    }
+    #two{
+    display: none;
+    }
+    }
+
+    .contackt-footer{
+    display: none;
+
+    }
+    .ellips-cont {
+    display: none;
+
+    }
+    .teamentry1-text1 {
+    display: none;
+    }
+
+    #achievements {
+    display: none;
+    }
+    .legal {
+    padding: 30px 60px;
+    }
+
+    .team {
+    background-image: url(../img/Team.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 375px;
+    height: 114px;
+    width: 100%;
+
+    }
+
+    .team-text {
+    padding: 30px 60px 30px 60px;
+
+
+    }
+
+    .achievements {
+    @include mixin.flex(center, center, 0, column);
+    padding: 30px 60px 0 60px;
+    background-color: color.$Grey-Bg;
+    }
+    }
+    @media screen and (max-width: 768px) and (min-width: 610px) {
+    #one {
+    display: none;
+    }
+    .burger {
+    display: none;
+    }
+    .header {
+    @include mixin.flex(center, flex-start, 0, column);
+    padding: 0;
+
+    &__logo {
+    margin-bottom: 30px;
+    }
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1{
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$Active;
+    text-wrap: nowrap;
+    }
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+    .headers {
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+    padding:  50px 60px 0 60px;
+    &__first {
+    @include mixin.flex(flex-start, center, 6px, row);
+    background: none;
+    padding: 0;
+    margin-bottom: 30px;
+    }
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color:color.$Grey-Text;
+    text-align: right;
+
+    }
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+    .header-home {
+    @include mixin.flex(center, flex-start, 0, column);
+    padding: 0;
+
+    &__logo-txt{
+    display: none;
+    }
+
+    &__logo {
+    margin-bottom: 30px;
+    }
+    .two {
+    display: none;
+    }
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$white;
+    text-wrap: nowrap;
+    }
+
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+
+    .headers-home {
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+
+    padding: 50px 60px 0 60px;
+
+    &__first {
+    @include mixin.flex(flex-start, center, 6px, row);
+    background: none;
+    padding: 0;
+    margin-bottom: 30px;
+    }
+
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    text-align: right;
+
+    }
+
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+    .txt-home {
+    @include mixin.Montserrat(38px, normal, 700);
+    margin-top: 269px;
+    text-align: center;
+    color: color.$white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 417px;
+    }
+    .Consistent__item-span2 {
+    text-wrap: nowrap;
+    }
+
+    .Consistent {
+    padding: 60px;
+
+    &__item {
+    margin-bottom: 60px;
+    }
+
+    &__titel {
+    &-txt {
+    margin-top: 60px;
+    }
+    }
+
+    .Consistent__item-span3 {
+    display: none;
+    }
+    }
+
+    .Services {
+    padding: 0 60px 15px 60px;
+
+    &__titel {
+    margin-bottom: 60px;
+    }
+
+    .item {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    .teams {
+    padding: 30px 60px 0 60px;
+    }
+
+    .trust {
+    &__images {
+    @include mixin.grid(none, none, none, 0);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    }
+    }
+
+    .Publications {
+    padding: 30px 60px 0 60px;
+
+    &__titel {
+    margin-top: 10px;
+    }
+
+    #imgages {
+    width: 100%;
+    }
+
+    .item {
+    @include mixin.grid(center, start, center, 30px);
+    grid-template-areas: "a b" "c c";
+    }
+
+    .card1 {
+    grid-area: a;
+    }
+
+    .card2 {
+    grid-area: b;
+    width: 95%;
+    }
+
+    .card3 {
+    grid-area: c;
+    }
+    }
+
+    .Cover {
+    display: none;
+    }
+
+
+    .contackt-footer {
+    display: none;
+    }
+    .contackt {
+    @include mixin.flex(center, center, 0, column);
+
+    .contackt-first {
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 21px;
+    margin-left: -100px;
+    @include mixin.flex(center, center, 10px, row);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    border-top: none;
+    padding-top: 0;
+    margin-bottom: 0;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+    }
+
+    }
+
+    .contackt-second {
+    margin-bottom: 30px;
+    svg:hover * {
+    fill: color.$Accent;
+    }
+
+    @include mixin.flex(center, center, 10px, row);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+    margin: 0;
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    margin-bottom: 0;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+    .legal {
+    padding: 30px 60px;
+    }
+
+    .team {
+    &__titel {
+    @include mixin.Montserrat(46px, normal, 700);
+    padding: 88px 0;
+    color: color.$white;
+    text-align: center;
+    text-shadow: 0px 15px 30px 0px rgba(40, 40, 86, 0.80);
+    letter-spacing: 63px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    }
+    }
+
+    .team-text {
+    padding: 60px 60px 30px 60px;
+
+    }
+
+    .achievements {
+    @include mixin.flex(center, center, 0, column);
+    padding: 30px 60px 0 60px;
+    background-color: color.$Grey-Bg;
+   
+
+    &__txt {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Main-Regular;
+    margin-bottom: 30px;
+    }
+
+    &__img {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 39px;
+    max-width: 31px;
+    }
+
+    &__img1 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 16px 5px;
+    max-width: 106px;
+    }
+
+    &__img2 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 16px 0;
+    max-width: 130px;
+    }
+
+    &__img3 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 16px 5px;
+    max-width: 110px;
+    }
+
+    &__img-logo {
+    @include mixin.flex(center, center, 40px, row);
+    }
+
+    &__svg {
+    margin-top: 30px;
+    }
+    }
+
+    .legal {
+    .legal {
+    padding: 30px 60px;
+    @include mixin.grid(none, none, none, 30px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    #svg{
+    display: none;
+    }
+    .team-page {
+    padding: 60px;
+
+    &__cards {
+    @include mixin.grid(center, flex-start, center, 30px 60px);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 60px 0 60px;
+    }
+
+    &__card {
+    &-img {
+    max-width: 294px;
+    width: 100%;
+    height: 400px;
+    }
+    }
+    }
+
+    .teamentry {
+
+
+    &__card-img {
+    margin-bottom: 0;
+    }
+
+    .teamentry-text {
+    display: none;
+    }
+
+    .ellips {
+    display: none;
+    }
+
+    @include mixin.flex(center, center, 30px, none);
+    padding: 60px 60px 0 60px;
+
+    &__cards {
+    @include mixin.flex(center, center, 30px, none);
+    }
+    }
+    .teamentry1 {
+
+    &-text1 {
+    padding: 30px 60px 60px 60px;
+    &__text11 {
+    padding-top: 30px;
+    border-top: 4px solid color.$Grey-Separator;
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    margin-bottom: 15px;
+    }
+
+    &__text21 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    margin-bottom: 30px;
+    }
+
+    &__titel1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Regular;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    }
+
+    &__text31 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    margin-bottom: 30px;
+    }
+
+    &__text41 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Black;
+    }
+    }
+    }
+    .contact {
+    padding: 60px;
+    }
+
+    .contact-adress {
+    &__fb {
+    margin-bottom: 30px;
+    }
+    }
+
+    .Publications-entry {
+    padding: 30px 60px 30px 60px;
+    margin-top: 60px;
+
+    &__item-entry {
+    @include mixin.grid(none, none, none,0 30px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    .Services-entry {
+    padding: 60px 60px 15px 60px;
+
+    .item {
+    @include mixin.flex(center, center, 28px, column);
+
+    &-btn {
+    margin-bottom: 60px;
+    }
+    }
+    }
+
+    .Services-txt {
+    &__txt {
+    @include mixin.grid(none, none, none, 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    .Services1 {
+    padding: 0 60px 30px 60px;
+
+    &__titel1 {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    }
+
+    .item1 {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    }
+    .border2 {
+    border-bottom: 10px solid #E7E7F2;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0 40px 60px 40px;
+
+    }
+    }
+    @media screen and (max-width: 1024px) and (min-width: 768px) {
+    #one {
+    display: none;
+    }
+
+    .burger {
+    display: none;
+    }
+
+    .header {
+    @include mixin.flex(space-between, center, 0, none);
+    max-width: none;
+    height: none;
+    padding: 15px 15px 10px 15px;
+    padding: 0;
+
+
+    &__logo {
+    margin-bottom: 0;
+    }
+
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$Active;
+    text-wrap: nowrap;
+    }
+
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+
+    .headers {
+    padding: 50px 60px 0 60px;
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+
+    &__first {
+    @include mixin.flex(flex-end, center, 6px, row);
+    background: none;
+    padding: 0;
+
+    }
+
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    text-align: right;
+
+    }
+
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+
+    .header-home {
+    @include mixin.flex(space-between, center, 0, none);
+    max-width: none;
+    height: none;
+    padding: 15px 15px 10px 15px;
+    padding: 0;
+
+    &__logo {
+    margin-bottom: 0;
+    }
+
+    &__logo-txt {
+    display: none;
+    }
+
+    .two{
+    display: none;
+    }
+
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$white;
+    text-wrap: nowrap;
+    }
+
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+
+    .headers-home {
+    padding: 50px 60px 0 60px;
+
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+
+    &__first {
+    @include mixin.flex(flex-end, center, 6px, row);
+    background: none;
+    padding: 0;
+
+    }
+
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    text-align: right;
+
+    }
+
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+
+
+    .contackt {
+    display: none;
+    }
+
+    .contackt-footer {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+    padding: 30px 60px;
+    background-color: color.$Grey-Bg;
+
+    .contackt-footer-first {
+    @include mixin.flex(space-between, center, 0, row);
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 21px;
+
+    .contackt-footer-first1 {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    .contackt-footer-second {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+    }
+    }
+    .legal {
+    padding: 30px 60px;
+    @include mixin.grid(none, none, none, 30px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team {
+    &__titel {
+    @include mixin.Montserrat(86px, normal, 700);
+    padding: 103px 0;
+    color: color.$white;
+    text-align: center;
+    text-shadow: 0px 15px 30px 0px rgba(40, 40, 86, 0.80);
+    letter-spacing: 63px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    }
+    }
+
+    .team-text {
+    padding: 60px 60px 30px 60px;
+    @include mixin.grid(none, none, none, 60px);
+    grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .achievements {
+    @include mixin.flex(center, center, 0, column);
+    padding: 30px 60px 0 60px;
+    background-color: color.$Grey-Bg;
+
+    &__txt {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Main-Regular;
+    margin-bottom: 30px;
+    }
+
+    &__img {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 33px 70px;
+    }
+
+    &__img1 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 16px;
+    }
+
+    &__img2 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 0;
+    }
+
+    &__img3 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 16px;
+    }
+
+    &__img-logo {
+    @include mixin.flex(center, center, 40px, row);
+    }
+
+    &__svg {
+    margin-top: 30px;
+    }
+    }
+
+    .legal {
+    .legal {
+    padding: 30px 60px;
+    @include mixin.grid(none, none, none, 30px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    #svg{
+    display: none;
+    }
+    .team-page {
+    padding: 60px;
+
+    &__titel {
+    padding: 0 180px;
+    }
+
+    &__cards {
+    @include mixin.grid(center, flex-start, center, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 60px 30px 60px;
+    }
+
+    &__card {
+    &-img {
+    width: 100%;
+    height: 400px;
+    }
+    }
+    }
+
+    .teamentry {
+
+    .ellips {
+    display: none;
+    }
+
+    @include mixin.flex(center, flex-start, 60px, none);
+    padding: 60px;
+
+    &__cards {
+    @include mixin.flex(center, flex-start, 60px, none);
+    }
+    }
+    .teamentry1-text1{
+    display: none;
+    }
+    .contact {
+    @include mixin.flex(center, none, 60px, row);
+    padding: 60px;
+    }
+
+    .contact-adress {
+    min-width: 180px;
+    }
+
+    .Publications-entry {
+    padding: 30px 60px 30px 60px;
+    margin-top: 60px;
+
+    &__item-entry {
+    @include mixin.grid(none, none, none, 0 30px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    .Consistent {
+    @include mixin.flex(center, none, 0, row);
+    padding: 60px 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    &__item {
+    @include mixin.flex(center, flex-end, 30px, column);
+    margin-bottom: 0px;
+    padding: 0 60px;
+    text-wrap: nowrap;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    border-top: none;
+    border-left: 4px solid color.$white30;
+    padding: 0 60px;
+
+    &-txt {
+    margin-top: 0px;
+    }
+
+    &-sub {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$white;
+    }
+    }
+
+    .Services {
+    padding: 0 60px 30px 60px;
+
+    &__titel {
+    margin-bottom: 60px;
+    }
+
+    .item {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    .trust {
+    &__images {
+    @include mixin.grid(none, none, none, 0);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    }
+    }
+
+    .Publications {
+    padding: 30px 60px 0 60px;
+
+    &__titel {
+    margin-top: 10px;
+    }
+
+    .item {
+    @include mixin.grid(center, start, center, 30px);
+    grid-template-areas: "a b" "c c";
+    }
+
+    .card1 {
+    grid-area: a;
+    }
+
+    .card2 {
+    grid-area: b;
+    width: 95%;
+    }
+
+    .card3 {
+    grid-area: c;
+    }
+    }
+
+    .Cover {
+    display: none;
+    }
+
+    .contackt {
+    display: none;
+    }
+
+    .contackt-footer {
+    padding: 30px 60px;
+    background-color: color.$Grey-Bg;
+
+    .contackt-footer-first {
+    @include mixin.flex(space-between, center, 0, row);
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 21px;
+
+    .contackt-footer-first1 {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    .contackt-footer-second {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+    }
+    }
+    }
+
+    .Services {
+    padding: 0 60px 30px 60px;
+
+    &__titel {
+    margin-bottom: 60px;
+    }
+
+    .item {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    .teams {
+    padding: 30px 60px 0 60px;
+    @include mixin.flex(flex-start, none, 0, row);
+
+    }
+
+    .trust {
+    &__images {
+    @include mixin.grid(none, none, none, 0);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
+    }
+
+    .txt-home {
+    @include mixin.Montserrat(38px, normal, 700);
+    margin-top: 245px;
+    text-align: center;
+    color: color.$white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 289px;
+    }
+
+    .Publications {
+    .Cover1 {
+    display: none;
+    }
+
+    padding: 30px 60px 0 60px;
+
+    &__titel {
+    margin-top: 10px;
+    }
+
+    #imgages {
+    width: 100%;
+    }
+
+    .item {
+    @include mixin.grid(center, center, center, 30px);
+    grid-template-columns: repeat(3, 1fr);
+
+    &__card {
+    @include mixin.flex(flex-start, center, 0, column);
+    background-color: color.$white;
+    border-radius: 8px;
+    height: 100%;
+    }
+
+
+    }
+
+    }
+    .Services-entry {
+    padding: 60px 60px 15px 60px;
+
+    .item {
+    @include mixin.flex(center, center, 28px, column);
+
+    &-btn {
+    margin-bottom: 60px;
+    }
+    }
+    }
+
+    .Services-txt {
+    &__txt {
+    @include mixin.grid(none, none, none, 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    .gdpr {
+    padding: 60px;
+    }
+    .Services1 {
+    padding: 0 60px 30px 60px;
+
+    &__titel1 {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    }
+
+    .item1 {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+    }
+
+    .border2 {
+    border-bottom: 10px solid #E7E7F2;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0 40px 60px 40px;
+
+    }
+    }
+    @media screen and (max-width: 1440px) and (min-width: 1024px) {
+    #one {
+    display: none;
+    }
+
+    .burger {
+    display: none;
+    }
+
+    .header {
+    @include mixin.flex(space-between, center, 0, none);
+    max-width: none;
+    height: none;
+    padding: 15px 15px 10px 15px;
+    padding: 0;
+
+    &__logo {
+    margin-bottom: 0;
+    }
+
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$Active;
+    text-wrap: nowrap;
+    }
+
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+
+    .headers {
+    padding: 50px 60px 0 60px;
+
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+
+
+    &__first {
+    @include mixin.flex(flex-end, center, 6px, row);
+    background: none;
+    padding: 0;
+
+    }
+
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    text-align: right;
+
+    }
+
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+
+    .header-home {
+    @include mixin.flex(space-between, center, 0, none);
+    max-width: none;
+    height: none;
+    padding: 15px 15px 10px 15px;
+    padding: 0;
+
+    &__logo {
+    margin-bottom: 0;
+    }
+
+    &__logo-txt {
+    display: none;
+    }
+
+    .two {
+    display: none;
+    }
+
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$white;
+    text-wrap: nowrap;
+    }
+
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+
+    .headers-home {
+    padding: 50px 60px 0 60px;
+
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+
+    &__first {
+    @include mixin.flex(flex-end, center, 6px, row);
+    background: none;
+    padding: 0;
+
+    }
+
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    text-align: right;
+
+    }
+
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+
+    .contackt {
+    display: none;
+    }
+
+    .contackt-footer {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+    padding: 30px 60px;
+    background-color: color.$Grey-Bg;
+
+    .contackt-footer-first {
+    @include mixin.flex(space-between, center, 0, row);
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 21px;
+
+    .contackt-footer-first1 {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    .contackt-footer-second {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+    }
+    }
+    .legal {
+    padding: 30px 180px;
+    @include mixin.grid(none, none, none, 30px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team {
+    &__titel {
+    @include mixin.Montserrat(96px, normal, 700);
+    padding: 160px 0;
+    color: color.$white;
+    text-align: center;
+    text-shadow: 0px 15px 30px 0px rgba(40, 40, 86, 0.80);
+    letter-spacing: 63px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    }
+    }
+
+    .team-text {
+    padding: 60px 180px 30px 180px;
+    @include mixin.grid(none, none, none, 60px);
+    grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .achievements {
+    @include mixin.flex(center, center, 0, column);
+    padding: 30px 60px 0 60px;
+    background-color: color.$Grey-Bg;
+
+    &__txt {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Main-Regular;
+    margin-bottom: 30px;
+    }
+
+    &__img {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 33px 80px;
+    }
+
+    &__img1 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 70px;
+    }
+
+    &__img2 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 53px;
+    }
+
+    &__img3 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 25px 67px;
+    }
+
+    &__img-logo {
+    @include mixin.flex(center, center, 40px, row);
+    }
+
+    &__svg {
+    margin-top: 30px;
+    }
+    }
+    #svg {
+    display: none;
+    }
+
+    .team-page {
+    padding: 60px;
+
+    &__titel {
+    padding: 0 180px;
+    }
+
+    &__cards {
+    @include mixin.grid(center, flex-start, center, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 60px 30px 60px;
+    }
+
+    &__card {
+    &-img {
+    width: 100%;
+
+    }
+    }
+    }
+    .teamentry {
+
+    @include mixin.flex(center, flex-start, 60px, none);
+    padding: 60px 180px;
+
+    &__cards {
+    @include mixin.flex(center, flex-start, 60px, none);
+    }
+
+    &-card {
+    margin-bottom: 30px;
+
+    &__name-name {
+    @include mixin.flex(none, center, 10px, none);
+    }
+
+    &__prof {
+    @include mixin.Montserrat(14px, normal, 400);
+    color: color.$Grey-Text;
+    margin-bottom: 0;
+    }
+
+    &__txt {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Active;
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+    }
+    }
+    .teamentry1-text1 {
+    display: none;
+    }
+
+    .contact {
+    @include mixin.flex(center, none, 60px, row);
+    padding: 60px 180px;
+    }
+
+    .contact-adress {
+    min-width: 280px;
+    }
+
+    .Publications-entry {
+    padding: 30px 60px 30px 60px;
+    margin-top: 60px;
+
+    &__item-entry {
+    @include mixin.grid(none, none, none, 0 30px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    .Consistent {
+    @include mixin.flex(center, none, 0, row);
+    padding: 60px 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    &__item {
+    @include mixin.flex(center, flex-end, 30px, column);
+    margin-bottom: 0px;
+    padding: 0 60px;
+    text-wrap: nowrap;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    border-top: none;
+    border-left: 4px solid color.$white30;
+    padding: 0 60px;
+
+    &-txt {
+    margin-top: 0px;
+    }
+
+    &-sub {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$white;
+    }
+    }
+
+    .Services {
+    padding: 0 60px 30px 60px;
+
+    &__titel {
+    margin-bottom: 60px;
+    }
+
+    .item {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    .trust {
+    &__images {
+    @include mixin.grid(none, none, none, 0);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    }
+    }
+
+    .Publications {
+    padding: 30px 60px 0 60px;
+
+    &__titel {
+    margin-top: 10px;
+    }
+
+    .item {
+    @include mixin.grid(center, start, center, 30px);
+    grid-template-areas: "a b" "c c";
+    }
+
+    .card1 {
+    grid-area: a;
+    }
+
+    .card2 {
+    grid-area: b;
+    width: 95%;
+    }
+
+    .card3 {
+    grid-area: c;
+    }
+    }
+
+    .Cover {
+    display: none;
+    }
+
+    .contackt {
+    display: none;
+    }
+
+    .contackt-footer {
+    padding: 30px 60px;
+    background-color: color.$Grey-Bg;
+
+    .contackt-footer-first {
+    @include mixin.flex(space-between, center, 0, row);
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 21px;
+
+    .contackt-footer-first1 {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    .contackt-footer-second {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+    }
+    }
+    }
+
+    .Services {
+    padding: 0 60px 30px 60px;
+
+    &__titel {
+    margin-bottom: 60px;
+    }
+
+    .item {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    .teams {
+    padding: 30px 60px 0 60px;
+    @include mixin.flex(flex-start, none, 0, row);
+
+    }
+
+    .trust {
+    &__images {
+    @include mixin.grid(none, none, none, 0);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
+    }
+
+    .txt-home {
+    @include mixin.Montserrat(38px, normal, 700);
+    margin-top: 261px;
+    text-align: center;
+    color: color.$white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 305px;
+    }
+
+    .Publications {
+    .Cover1 {
+    display: none;
+    }
+
+    padding: 30px 60px 0 60px;
+
+    &__titel {
+    margin-top: 10px;
+    }
+
+    #imgages {
+    width: 100%;
+    }
+
+    .item {
+    @include mixin.grid(center, center, center, 30px);
+    grid-template-columns: repeat(3, 1fr);
+
+    &__card {
+    @include mixin.flex(flex-start, center, 0, column);
+    background-color: color.$white;
+    border-radius: 8px;
+    height: 100%;
+    }
+
+
+    }
+
+    }
+    .Services-entry {
+    padding: 60px 180px 15px 180px;
+
+    .item {
+    @include mixin.flex(center, center, 28px, column);
+
+    &-btn {
+    margin-bottom: 60px;
+    }
+    }
+    }
+
+    .Services-txt {
+    &__txt {
+    @include mixin.grid(none, none, none, 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    .gdpr {
+    padding: 60px 180px 60px 180px;
+    }
+
+    .Services1 {
+    padding: 0 60px 30px 60px;
+
+    &__titel1 {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    }
+
+    .item1 {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+    }
+
+    .border2 {
+    border-bottom: 10px solid #E7E7F2;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0 40px 60px 40px;
+
+    }
+    }
+    @media screen and (max-width:1920px) and (min-width: 1440px) {
+    #one {
+    display: none;
+    }
+
+    .burger {
+    display: none;
+    }
+
+    .header {
+    @include mixin.flex(space-between, center, 0, none);
+    max-width: none;
+    height: none;
+    padding: 15px 15px 10px 15px;
+    padding: 0;
+
+    &__logo {
+    margin-bottom: 0;
+    }
+
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$Active;
+    text-wrap: nowrap;
+    }
+
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+
+    .headers {
+    padding: 50px 60px 0 60px;
+
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+
+
+
+    &__first {
+    @include mixin.flex(flex-end, center, 6px, row);
+    background: none;
+    padding: 0;
+    }
+
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    text-align: right;
+
+    }
+
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+
+    .header-home {
+    @include mixin.flex(space-between, center, 0, none);
+    max-width: none;
+    height: none;
+    padding: 15px 15px 10px 15px;
+    padding: 0;
+
+    &__logo {
+    margin-bottom: 0;
+    }
+
+    &__logo-txt {
+    display: none;
+    }
+
+    .two {
+    display: none;
+    }
+
+    .nav1 {
+    @include mixin.flex(none, none, 0, none);
+
+    }
+
+    .nav1-menu1 {
+    @include mixin.flex(space-between, none, 15px, row-reverse);
+    width: 100%;
+    list-style: none;
+    }
+
+    .nav1-actives1 {
+    @include mixin.Montserrat(16px, normal, 700);
+    text-align: center;
+    color: color.$white;
+    text-wrap: nowrap;
+    }
+
+    .nav1-actives1:active {
+    color: color.$Accent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+
+    .nav1-actives1:hover {
+    color: color.$Active;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    }
+    }
+
+    .headers-home {
+    padding: 50px 60px 0 60px;
+
+    #Facebook-Header:hover * {
+    fill: color.$Accent;
+    }
+
+    &__first {
+    @include mixin.flex(flex-end, center, 6px, row);
+    background: none;
+    padding: 0;
+
+    }
+
+    &__adress {
+    @include mixin.flex(flex-start, center, 6px, row);
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    text-align: right;
+
+    }
+
+    &__callback {
+    @include mixin.flex(flex-start, center, 6px, row);
+    }
+    }
+
+    .contackt {
+    display: none;
+    }
+
+    .contackt-footer {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+    padding: 30px 60px;
+    background-color: color.$Grey-Bg;
+
+    .contackt-footer-first {
+    @include mixin.flex(space-between, center, 0, row);
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 21px;
+
+    .contackt-footer-first1 {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    .contackt-footer-second {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+    }
+    }
+    .legal {
+    padding: 30px 280px;
+    @include mixin.grid(none, none, none, 30px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team {
+    &__titel {
+    @include mixin.Montserrat(96px, normal, 700);
+    padding: 233px 0;
+    color: color.$white;
+    text-align: center;
+    text-shadow: 0px 15px 30px 0px rgba(40, 40, 86, 0.80);
+    letter-spacing: 63px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    }
+    }
+
+    .team-text {
+    padding: 60px 280px 30px 280px;
+    @include mixin.grid(none, none, none, 60px);
+    grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .achievements {
+    @include mixin.flex(center, center, 0, column);
+    padding: 30px 160px 0 160px;
+    background-color: color.$Grey-Bg;
+
+    &__txt {
+    @include mixin.Montserrat(14px, normal, 700);
+    text-transform: uppercase;
+    color: color.$Main-Regular;
+    margin-bottom: 30px;
+    }
+
+    &__img {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 27px 160px;
+    }
+
+    &__img1 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 17px 106px;
+    }
+
+    &__img2 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 17px 88px ;
+    }
+
+    &__img3 {
+    border-radius: 12px;
+    background: color.$white;
+    padding: 16px 102px;
+    }
+
+    &__img-logo {
+    @include mixin.flex(center, center, 40px, row);
+    }
+
+    &__svg {
+    margin-top: 30px;
+    }
+
+    }
+    #svg {
+    display: none;
+    }
+
+    .team-page {
+    padding: 60px;
+
+    &__titel {
+    padding: 0 280px;
+    }
+
+    &__cards {
+    @include mixin.grid(center, flex-start, center, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 160px 30px 160px;
+    }
+
+    &__card {
+    &-img {
+    width: 100%;
+
+    }
+    }
+    }
+
+    .teamentry {
+
+    @include mixin.flex(center, flex-start, 60px, none);
+    padding: 60px 280px;
+
+    &__cards {
+    @include mixin.flex(center, flex-start, 60px, none);
+    }
+
+    &-card {
+    margin-bottom: 30px;
+
+    &__name-name {
+    @include mixin.flex(none, center, 10px, none);
+    }
+
+    &__prof {
+    @include mixin.Montserrat(14px, normal, 400);
+    color: color.$Grey-Text;
+    margin-bottom: 0;
+    }
+
+    &__txt {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Active;
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+    }
+    }
+
+    .teamentry1-text1 {
+    display: none;
+    }
+    .contact {
+    @include mixin.flex(center, none, 60px, row);
+    padding: 60px 280px;
+    }
+
+    .contact-adress {
+    min-width: 480px;
+    }
+
+    .Publications-entry {
+    padding: 30px 160px 30px 160px;
+    margin-top: 60px;
+
+    &__item-entry {
+    @include mixin.grid(none, none, none, 0 30px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    .Consistent {
+    @include mixin.flex(center, none, 0, row);
+    padding: 60px 280px;
+    margin-right: auto;
+    margin-left: auto;
+
+    &__item {
+    @include mixin.flex(center, flex-end, 30px, column);
+    margin-bottom: 0px;
+    padding: 0 60px;
+    text-wrap: nowrap;
+    }
+
+    &__titel {
+    @include mixin.Montserrat(30px, normal, 700);
+    border-top: none;
+    border-left: 4px solid color.$white30;
+    padding: 0 60px;
+
+    &-txt {
+    margin-top: 0px;
+    }
+
+    &-sub {
+    @include mixin.Montserrat(19px, 30px, 400);
+    color: color.$white;
+    }
+    }
+
+    .Services {
+    padding: 0 60px 30px 60px;
+
+    &__titel {
+    margin-bottom: 60px;
+    }
+
+    .item {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    .trust {
+    &__images {
+    @include mixin.grid(none, none, none, 0);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    }
+    }
+
+    .Publications {
+    padding: 30px 60px 0 60px;
+
+    &__titel {
+    margin-top: 10px;
+    }
+
+    .item {
+    @include mixin.grid(center, start, center, 30px);
+    grid-template-areas: "a b" "c c";
+    }
+
+    .card1 {
+    grid-area: a;
+    }
+
+    .card2 {
+    grid-area: b;
+    width: 95%;
+    }
+
+    .card3 {
+    grid-area: c;
+    }
+    }
+
+    .Cover {
+    display: none;
+    }
+
+    .contackt {
+    display: none;
+    }
+
+    .contackt-footer {
+    padding: 30px 60px;
+    background-color: color.$Grey-Bg;
+
+    .contackt-footer-first {
+    @include mixin.flex(space-between, center, 0, row);
+    border-top: 2px solid color.$Lavender;
+    padding-top: 30px;
+    margin-bottom: 21px;
+
+    .contackt-footer-first1 {
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__adress {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Main-Regular;
+    }
+
+    &__span {
+    @include mixin.Montserrat(12px, normal, 700);
+    color: color.$Active;
+    text-transform: uppercase;
+    }
+    }
+
+    &__span1 {
+    @include mixin.Montserrat(16px, normal, 400);
+    color: color.$Grey-Text;
+    }
+    }
+
+    .contackt-footer-second {
+    svg:hover * {
+    fill: color.$Accent;
+    }
+
+    @include mixin.flex(flex-start, center, 10px, row);
+
+    &__tel {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Main-Alt;
+
+    }
+
+    &__email {
+    @include mixin.Montserrat(16px, normal, 700);
+    color: color.$Active;
+    }
+    }
+    }
+    }
+
+    .Services {
+    padding: 0 160px 30px 160px;
+
+    &__titel {
+    margin-bottom: 60px;
+    }
+
+    .item {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    .teams {
+    padding: 30px 160px 0 160px;
+    @include mixin.flex(flex-start, none, 0, row);
+
+    }
+
+    .trust {
+    padding: 0 100px 60px 100px;
+    &__images {
+    @include mixin.grid(none, none, none, 0);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    }
+    }
+
+    .txt-home {
+    @include mixin.Montserrat(38px, normal, 700);
+    margin-top: 361px;
+    text-align: center;
+    color: color.$white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 405px;
+    }
+
+    .Publications {
+    .Cover1 {
+    display: none;
+    }
+
+    padding: 30px 160px 0 160px;
+
+    &__titel {
+    margin-top: 10px;
+    }
+
+    #imgages {
+    width: 100%;
+    }
+
+    .item {
+    @include mixin.grid(center, center, center, 30px);
+    grid-template-columns: repeat(3, 1fr);
+
+    &__card {
+    @include mixin.flex(flex-start, center, 0, column);
+    background-color: color.$white;
+    border-radius: 8px;
+    height: 100%;
+    }
+
+
+    }
+
+    }
+    .Services-entry {
+    padding: 60px 280px 15px 280px;
+
+    .item {
+    @include mixin.flex(center, center, 28px, column);
+
+    &-btn {
+    margin-bottom: 60px;
+    }
+    }
+    }
+
+    .Services-txt {
+    &__txt {
+    @include mixin.grid(none, none, none, 60px);
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    .gdpr {
+    padding: 60px 280px 60px 280px;
+    }
+    .Services1 {
+    padding: 0 160px 30px 160px;
+
+    &__titel1 {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    }
+
+    .item1 {
+    @include mixin.grid(none, none, none, 30px 60px);
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+    }
+
+    .border2 {
+    border-bottom: 10px solid #E7E7F2;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0 40px 60px 40px;
+
+    }
+
+    }
+
+
+
+
+
+
+
+
