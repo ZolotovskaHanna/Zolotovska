@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW2</title>
+    <script>
+
+        let num = 10369;
+        let str = num.toString().split('');
+        let result = str.join(' ');
+        console.log(result);
+
+
+        let num1 = 1500;
+        let num2 = 30;
+        let sum = num1 + num2;
+        let difference = num1 - num2;
+        let product = num1 * num2;
+        let quotient = num1 / num2;
+        console.log("Результат додавання:", sum);
+        console.log("Результат віднімання:", difference);
+        console.log("Результат множення:", product);
+        console.log("Результат ділення:", quotient);
+
+
+        function processName() {
+            let name = prompt("Будь ласка, введіть ваше ім'я:");
+            if (name !== null) {
+                let yourName = name.charAt(0).toUpperCase() + name.slice(1);
+                alert(yourName);
+                console.log("Ваше ім'я:" + yourName);
+            } else {
+                console.log("Ви не ввели ім'я. Будь ласка, спробуйте ще раз.");
+            }
+        }
+        processName();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
