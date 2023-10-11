@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW3</title>
+    <script>
+
+        function hello() {
+            let name = prompt("Будь ласка, введіть ваше ім'я:");
+            if (name !== null) {
+                let yourName = name.charAt(0).toUpperCase() + name.slice(1);
+                alert(`Hello ${yourName}! How are you?`);
+                console.log(`Hello ${yourName}! How are you?`);
+        } else {
+            alert("Ви не ввели ім'я. Будь ласка, спробуйте ще раз.");
+            console.log("Ви не ввели ім'я. Будь ласка, спробуйте ще раз.");
+         }
+        }
+        hello();
+
+
+        function number() {
+            let number = prompt("Введіть тризначне число:");
+            if (number.length !== 3 || isNaN(number)) {
+                alert("Будь ласка, введіть тризначне число.");
+            } else {
+                let num1 = parseInt(number.charAt(0));
+                let num2 = parseInt(number.charAt(1));
+                let num3 = parseInt(number.charAt(2));
+                if (num1 === num2 && num2 === num3) {
+                    alert("Всі цифри однакові.");
+                    console.log("Всі цифри однакові.");
+                } else {
+                    alert("Всі цифри не однакові.");
+                    console.log("Всі цифри не однакові.");
+                }
+                if (num1 === num2 || num2 === num3 || num1 === num3) {
+                    alert("Серед цифр є однакові.");
+                    console.log("Серед цифр є однакові.");
+                } else {
+                    alert("Серед цифр немає однакових.");
+                    console.log("Серед цифр немає однакових.");
+                }
+            }
+        }
+        number();
+
+
+        function user() {
+            let yearOfBirth = prompt("Введіть ваш рік народження:");
+            let city = prompt("Введіть містo, в якому ви живете:");
+            let sport = prompt("Введіть ваш улюблений вид спорту:");
+
+            if (yearOfBirth === null || yearOfBirth === "") {
+                alert("Шкода, що ви не захотіли ввести свій рік народження.");
+                console.log("Шкода, що ви не захотіли ввести свій рік народження.");
+            } else {
+                let currentYear = new Date().getFullYear();
+                let age = currentYear - parseInt(yearOfBirth);
+                alert(`Ваш вік: ${age} років`);
+                console.log(`Ваш вік: ${age} років`);
+            }
+
+            if (city === null) {
+                alert("Шкода, що ви не захотіли ввести місто, в якому ви живете.");
+                console.log("Шкода, що ви не захотіли ввести місто, в якому ви живете.");
+            } else if (city === "Київ") {
+                alert("Ви живете у столиці України.");
+                console.log("Ти живеш у столиці України.");
+            } else if (city === "Вашингтон") {
+                alert("Ви живете у столиці Сполучених Штатів Америки.");
+                console.log("Ви живете у столиці Сполучених Штатів Америки.");
+            } else if (city === "Лондон") {
+                alert("Ви живете у столиці Великої Британії.");
+                console.log("Ви живете у столиці Великої Британії.");
+            } else {
+                alert(`Ви живете у місті ${city} .`);
+                console.log(`Ви живете у місті ${city} .`);
+            }
+
+            if (sport === null) {
+                alert("Шкода, що ви не захотіли ввести ваш улюблений вид спорту.");
+                console.log("Шкода, що ви не захотіли ввести ваш улюблений вид спорту.");
+            } else {
+                alert(`Ваш улюблений вид спорту ${sport} .`);
+                console.log(`Ваш улюблений вид спорту ${sport} .`);
+            }
+        }
+        user();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
