@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW9</title>
+    <script>
+
+        function People(name, surname, age) {
+            this.name = name;
+            this.surname = surname;
+            this.age = age;
+            this.displayInfo = function() {
+                console.log(`Ім'я: ${this.name}, Прізвище: ${this.surname}, Вік: ${this.age} років`);
+            };
+        }
+        function Car(brand, model, year, number) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+            this.number = number;
+            this.owner = null;
+            this.displayInfo = function() {
+                console.log(`Марка: ${this.brand}, Модель: ${this.model}, Рік випуску: ${this.year}, Реєстраційний номер: ${this.number}`);
+            };
+            this.assignOwner = function(owner) {
+                if (owner instanceof People) {
+                    this.owner = owner;
+                    console.log(`Транспортний засіб зареєстровано: ${owner.name} ${owner.surname}`);
+                }
+            };
+        }
+        const peopleName = prompt("Введіть ім'я людини:");
+        const peopleSurname = prompt("Введіть прізвище людини:");
+        const peopleAge = prompt("Введіть вік людини:");
+        const person = new People(peopleName, peopleSurname, peopleAge);
+
+        const carBrand = prompt("Введіть марку автомобіля:");
+        const carModel = prompt("Введіть модель автомобіля:");
+        const carYear = prompt("Введіть рік випуску автомобіля:");
+        const carNumber = prompt("Введіть реєстраційний номер автомобіля:");
+        const vehicle = new Car(carBrand, carModel, carYear, carNumber);
+
+        person.displayInfo();
+        vehicle.displayInfo();
+
+        vehicle.assignOwner(person);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
