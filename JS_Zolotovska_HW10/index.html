@@ -28,15 +28,15 @@
     let originalButtonColor = getComputedStyle(colorButton).backgroundColor;
     function changeColors() {
         if (blockColorChanged) {
-            colorBlock.style.color = originalBlockColor; // Повертаємо попередній колір тексту
+            colorBlock.style.color = originalBlockColor;
         } else {
-            colorBlock.style.color = getRandomColor(); // Змінюємо колір тексту на випадковий
+            colorBlock.style.color = getRandomColor();
         }
         if (buttonColorChanged) {
-            colorButton.style.backgroundColor = originalButtonColor; // Повертаємо попередній колір кнопки
+            colorButton.style.backgroundColor = originalButtonColor;
             colorButton.style.color = originalButtonColors;
         } else {
-            colorButton.style.backgroundColor = getRandomColor(); // Змінюємо колір кнопки на випадковий
+            colorButton.style.backgroundColor = getRandomColor(); 
             colorButton.style.color = getRandomColor();
         }
         blockColorChanged = !blockColorChanged;
