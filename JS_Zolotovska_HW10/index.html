@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW10</title>
+</head>
+<body>
+<p id="colorBlock">Є блок із текстом на сторінці та кнопку. При натисканні на кнопку текст змінює колір.
+    При повторному натисканні – повертається попередній колір</p>
+<button id="colorButton">Кнопка</button>
+
+<h2>Таблиця Піфагора</h2>
+<table id="pythagoreanTable"></table>
+
+<h2>Випадкове зображення</h2>
+<img id="randomImage" alt="Випадкове зображення">
+
+<script>
+    const colorBlock = document.getElementById("colorBlock");
+    const colorButton = document.getElementById("colorButton");
+    let blockColorChanged = false;
+    let buttonColorChanged = false;
+    let originalBlockColor = getComputedStyle(colorBlock).color;
+    let originalButtonColors = getComputedStyle(colorButton).color;
+    let originalButtonColor = getComputedStyle(colorButton).backgroundColor;
+    function changeColors() {
+        if (blockColorChanged) {
+            colorBlock.style.color = originalBlockColor; // Повертаємо попередній колір тексту
+        } else {
+            colorBlock.style.color = getRandomColor(); // Змінюємо колір тексту на випадковий
+        }
+        if (buttonColorChanged) {
+            colorButton.style.backgroundColor = originalButtonColor; // Повертаємо попередній колір кнопки
+            colorButton.style.color = originalButtonColors;
+        } else {
+            colorButton.style.backgroundColor = getRandomColor(); // Змінюємо колір кнопки на випадковий
+            colorButton.style.color = getRandomColor();
+        }
+        blockColorChanged = !blockColorChanged;
+        buttonColorChanged = !buttonColorChanged;
+    }
+    function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    colorButton.addEventListener("click", changeColors);
+
+
+    const pythagoreanTable = document.getElementById("pythagoreanTable");
+    for (let i = 1; i <= 10; i++) {
+        const row = document.createElement("tr");
+        for (let j = 1; j <= 10; j++) {
+            const cell = document.createElement("td");
+            cell.textContent = i * j;
+            row.appendChild(cell);
+        }
+        pythagoreanTable.appendChild(row);
+    }
+
+
+    const randomImage = document.getElementById("randomImage");
+    const imagePath = "img/";
+    const randomIndex = Math.floor(Math.random() * 9) + 1;
+    const imageUrl = `${imagePath}${randomIndex}.jpg`;
+    randomImage.src = imageUrl;
+</script>
+</body>
+</html>
