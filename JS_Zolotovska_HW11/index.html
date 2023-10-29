@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW11</title>
+    <style>
+        .color{
+            background-color: #0c8484;
+        }
+    </style>
+</head>
+<body>
+    <button onclick='getLink()'>Введіть посилання</button>
+    <button onclick='redirectToLink()'>Перейдіть за посиланням</button>
+
+    
+<div id="buttons">
+    <button>Кнопка 1</button>
+    <button>Кнопка 2</button>
+    <button>Кнопка 3</button>
+</div>
+
+
+    <ul id="task-list"></ul>
+    <input type="text" id="task-input" placeholder="Додати нове завдання">
+    <button id="add-task">Додати</button>
+
+<script>
+    let storedLink = '';
+    function getLink() {
+        storedLink = prompt('Будь ласка, введіть посилання:');
+    }
+    function redirectToLink() {
+        if (storedLink) {
+            window.location.href = storedLink;
+        } else {
+            alert('Тицни кнопку "Введіть посилання"');
+        }
+    }
+
+
+    let buttons = document.getElementById('buttons');
+    buttons.addEventListener('click', function(event) {
+        if (event.target.tagName === 'BUTTON') {
+            event.target.classList.add('color')
+            alert('Клікнуто на кнопці: ' + event.target.textContent);
+            console.log('Клікнуто на кнопці: ' + event.target.textContent);
+        }
+    });
+
+
+    let taskList = document.getElementById("task-list");
+    let taskInput = document.getElementById("task-input");
+    let addButton = document.getElementById("add-task");
+    function addTask() {
+        let taskText = taskInput.value;
+        if (taskText.trim() !== "") {
+            let taskItem = document.createElement("li");
+            taskItem.innerHTML = taskText + ' <button class="delete">Видалити</button>';
+            taskList.appendChild(taskItem);
+            taskInput.value = "";
+        }
+    }
+    function deleteTask(event) {
+        if (event.target.classList.contains("delete")) {
+            event.target.parentElement.remove();
+        }
+    }
+    addButton.addEventListener("click", addTask);
+    taskList.addEventListener("click", deleteTask);
+</script>
+</body>
+</html>
