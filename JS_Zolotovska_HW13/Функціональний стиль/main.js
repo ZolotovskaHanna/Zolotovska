@@ -9,25 +9,20 @@ function slider(prevButton, nextButton, listElement, dotsContainer) {
         slides.forEach((slide, index) => {
             slide.classList.toggle(ACTIVE_CLASS, index === currentSlideIndex);
         });
-
         dots.forEach((dot, index) => {
             dot.classList.toggle(ACTIVE_DOT_CLASS, index === currentSlideIndex % dots.length);
         });
-
         prevButton.style.display = currentSlideIndex === 0 ? 'none' : 'flex';
         nextButton.style.display = currentSlideIndex === slides.length - 1 ? 'none' : 'flex';
     };
-
     prevButton.addEventListener('click', () => {
         currentSlideIndex = currentSlideIndex > 0 ? currentSlideIndex - 1 : slides.length - 1;
         updateSlider();
     });
-
     nextButton.addEventListener('click', () => {
         currentSlideIndex = currentSlideIndex < slides.length - 1 ? currentSlideIndex + 1 : 0;
         updateSlider();
     });
-
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentSlideIndex = index * Math.ceil(slides.length / dots.length);

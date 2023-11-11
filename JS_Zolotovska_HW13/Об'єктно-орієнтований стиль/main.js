@@ -26,7 +26,7 @@ class Slider {
         this.dots.forEach(dot => dot.classList.remove('active'));
 
         this.slides[index].classList.add('current');
-        this.dots[index % 3].classList.add('active');
+        this.dots[index].classList.add('active');
 
         this.prevButton.style.display = index === 0 ? 'none' : 'flex';
         this.nextButton.style.display = index === this.slides.length - 1 ? 'none' : 'flex';

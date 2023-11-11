@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dots.forEach(function(dot, index) {
             dot.classList.toggle('active', index === (currentSlide % dots.length));
         });
+
         prevButton.style.display = currentSlide === 0 ? 'none' : 'flex';
         nextButton.style.display = currentSlide === slides.length - 1 ? 'none' : 'flex';
     }
@@ -32,11 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    dots.forEach(function(dot, index) {
-        dot.addEventListener('click', function() {
-            currentSlide = index * 3;
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index * Math.ceil(slides.length / dots.length);
             updateSlider();
         });
     });
-    updateSlider(); 
+    updateSlider();
 });
