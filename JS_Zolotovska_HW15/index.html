@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW15</title>
+</head>
+
+<body>
+
+    <script>
+        class Car {
+            constructor(make, model, year, speed) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+                this.speed = speed;
+            }
+
+            get age() {
+                const currentYear = new Date().getFullYear();
+                return currentYear - this.year;
+            }
+
+            set age(value) {
+                const currentYear = new Date().getFullYear();
+                if (value > currentYear) {
+                    console.error('Error: Рік не може бути більшим за поточний рік.');
+                } else {
+                    this.year = value;
+                }
+            }
+
+            get currentSpeed() {
+                return this.speed;
+            }
+
+            set currentSpeed(value) {
+                if (value < 0) {
+                    console.error('Error: Швидкість не може бути менше нуля.');
+                } else {
+                    this.speed = value;
+                }
+            }
+
+            accelerate(increment) {
+                this.speed += increment;
+            }
+
+            brake(decrement) {
+                this.speed = Math.max(0, this.speed - decrement);
+            }
+        }
+
+        const myCar = new Car('Toyota', 'Camry', 2018, 120);
+        console.log(`Car is ${myCar.age} years old.`);
+
+        myCar.age = 2023;
+        console.log(`Car is ${myCar.age} years old.`);
+
+        myCar.currentSpeed = 100;
+        myCar.accelerate(20);
+        console.log(`${myCar.currentSpeed} km/h.`);
+        myCar.brake(10);
+        console.log(`${myCar.currentSpeed} km/h.`);
+    </script>
+</body>
+
+</html>
