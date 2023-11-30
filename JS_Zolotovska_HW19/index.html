@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>HW19</title>
+</head>
+<body>
+<h1>Віджет погоди у місті Дружківка</h1>
+<div class="weather-widget">
+    <div class="date-time">
+        <div id="date"></div>
+        <div id="time"></div>
+        <div id="additional-info">
+            <div>Humidity: <span id="humidity"></span></div>
+            <div>Pressure: <span id="pressure"></span></div>
+            <div>Wind: <span id="wind"></span> <span id="wind-direction"></span></div>
+        </div>
+    </div>
+
+        <div id="weather-description">
+            <img id="weather-icon" src="" alt="Weather icon"/>
+            <div id="temperature"></div>
+            <div id="feels-like"></div>
+            <div id="description"></div>
+            <div class="button-updated">
+                <div id="last-updated"></div>
+                <button id="refresh-button" class="refresh-button">
+                    <svg width="16" height="16" viewBox="0 0 32 32">
+                    <path d="M27.802 5.197c-2.925-3.194-7.13-5.197-11.803-5.197-8.837 0-16 7.163-16 16h3c0-7.18 5.82-13 13-13 3.844 0 7.298 1.669 9.678 4.322l-4.678 4.678h11v-11l-4.198 4.197z"></path>
+                    <path d="M29 16c0 7.18-5.82 13-13 13-3.844 0-7.298-1.669-9.678-4.322l4.678-4.678h-11v11l4.197-4.197c2.925 3.194 7.13 5.197 11.803 5.197 8.837 0 16-7.163 16-16h-3z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+</div>
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
