@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/main.css">
+    <title>HW22</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>SWAPI – The Star Wars API.</h1>
+        <div class="input-group mb-3">
+            <input type="text" id="endpoint-input" class="form-control"
+                placeholder="Enter SWAPI endpoint (https://swapi.dev/api/starships/9/)">
+            <div class="input-group-append">
+                <button id="fetch-button" class="btn btn-primary">Fetch</button>
+            </div>
+        </div>
+        <div id="loading-spinner" class="spinner-border" role="status" style="display: none;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <pre id="result"></pre>
+    </div>
+
+    <script src="./dist/bundle.js"></script>
+</body>
+
+</html>
