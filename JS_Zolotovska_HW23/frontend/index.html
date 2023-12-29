@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW23</title>
+    <link rel="stylesheet" href="./dist/style.css">
+</head>
+
+<body>
+    <h1>ToDo</h1>
+
+    <div class="button">
+        <button type="button" id="get" class="form__btn">GET</button>
+        <button type="button" id="get_id" class="form__btn">GET by id</button>
+        <button type="button" id="post" class="form__btn">POST</button>
+        <button type="button" id="put_id" class="form__btn">PUT by id</button>
+        <button type="button" id="delete_id" class="form__btn">DELETE by id</button>
+    </div>
+
+    <div class="todos">
+        <div class="todos_text">
+            <div>
+                <label for="todo_text">Todo text</label>
+                <input type="text" id="todo_text">
+            </div>
+            <div>
+                <label class="form-label">Global data</label>
+                <pre id="response1"></pre>
+            </div>
+        </div>
+
+
+        <div class="todos_id">
+            <div>
+                <label for="todo_id">Todo id</label>
+                <input type="text" id="todo_id">
+            </div>
+            <div>
+                <label class="form-label">ID data</label>
+                <pre id="response2"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>
