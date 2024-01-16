@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Winner extends Component {
-  static calculateWinner(squares) {
+class calculateWinner extends React.Component {
+  static game(squares) {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -25,5 +25,9 @@ class Winner extends Component {
   }
 }
 
-export default Winner;
+export default calculateWinner;
+
+
+
+
 
