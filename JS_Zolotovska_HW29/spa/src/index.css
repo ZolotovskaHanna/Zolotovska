@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+    height: 100vh;
+}
+
+#toggle-btn:checked+label>span {
+    transform: translateX(16px);
+}
