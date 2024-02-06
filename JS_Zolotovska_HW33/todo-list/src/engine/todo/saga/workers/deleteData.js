@@ -9,3 +9,4 @@ export function* deleteDataWorker(action) {
     localStorage.setItem('items', JSON.stringify(updatedItems));
     yield put(slice.actions.setItems(updatedItems));
 }
+

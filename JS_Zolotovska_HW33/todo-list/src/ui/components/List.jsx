@@ -23,13 +23,11 @@ export function List() {
                 </div>
             )}
             <br />
-            {!loading && items.length === 0 ? (
-                <span>No data</span>
-            ) : (
-                <ul className="list">
-                   {items.map((item, index) => <ListItem key={index} item={item} index={index} />)}
-                </ul>
-            )}
+            {!loading && (!items || items.length === 0) ? (<span>No data</span> ) : (
+            <ul className="list">
+               {items.map((item, index) => <ListItem key={index} item={item} index={index} />)}
+            </ul>
+        )}         
         </>
     );
 }

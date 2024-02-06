@@ -13,8 +13,9 @@ export function Footer() {
    
     return (  
         <div className="d-flex justify-content-between align-items-center">
-            <span>Count: {items.length}</span>
+            <span>Count: {items?.length || 0}</span>
             <button onClick={onClear}>Clear</button>
-       </div>
+        </div>
     )
 }
+

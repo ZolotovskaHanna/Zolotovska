@@ -22,9 +22,7 @@ const slice = createSlice({
     }
 })
 
-export const { setItems, addItem, setLoading, deleteItem } = slice.actions;
 export default slice;
-
 
 
 
