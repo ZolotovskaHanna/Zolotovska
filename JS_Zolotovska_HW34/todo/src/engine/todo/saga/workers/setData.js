@@ -4,7 +4,6 @@ import Selectors from '../../redux/selectors';
 
 export function* setDataWorker(action) {
     yield put(slice.actions.setLoading(true));
-    yield delay(3000);
     const newItem = { text: action.payload, completed: false };
     const items = yield select(Selectors.items);
     const completedIndex = items.findIndex(item => item.completed);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Field } from 'react-final-form';
 import selectors from "../../../engine/todo/redux/selectors";
@@ -11,12 +11,21 @@ import DirectionsIcon from '@mui/icons-material/Directions';
 import Container from "./styles.jsx";
 
 export function TodoForm() {
+
     const dispatch = useDispatch();
     const loading = useSelector(selectors.loading);
+    const items = useSelector(selectors.items);
+    const [error, setError] = useState('');
 
     const onSubmit = (values) => {
         if (values.textInput) {
+            const taskExists = items.some(item => item.text.toLowerCase() === values.textInput.toLowerCase());
+            if (taskExists) {
+                setError('Ця задача вже існує!');
+                return;
+            }
             dispatch(setDataAsyncAction(values.textInput));
+            setError(''); 
         }
     };
 
@@ -38,6 +47,7 @@ export function TodoForm() {
                                 />
                             )}
                         </Field>
+                        {error && <Typography color="error">{error}</Typography>}
                         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
                         <IconButton 
                             color="primary" 
